@@ -93,10 +93,21 @@
 //     std::cout << param << std::endl;
 // }
 
+// // Calculate the size of the array at compile time
+// template <typename T, std::size_t N>
+// constexpr std::size_t arraySize(T (&)[N]) noexcept {
+//     return N;
+// }
+
 // int main() {
 //     const char arr[] = "Hello, World!";
 //     f(arr); // arr is an array but T is deduced as const char*
 //     f1(arr); // T is deduced as const char[14] ParamType is const char (&)[14]
+
+//     int keyVals[] = {1, 2, 3, 4, 5};
+//     int mappedVals[arraySize(keyVals)];
+//     int keyValsSize = arraySize(keyVals); // can be used to initialize another array as the size is deduced at compile time
+//     std::cout << "Size of keyVals: " << keyValsSize << std::endl;
 // }
 // ====================================================================================================================
 // 3. Function arguments
